@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Confirmacion de Reserva</title>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="estilosbet1.css" />
  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -20,8 +20,8 @@
   </div>
 
   <div class="expiration-cvv">
-    <div class="input-group expiration-group"> <label for="exp-month">Fecha de caducidad</label>
-      <div class="date-selects-container"> <select id="exp-month">
+    <div class="input-group expiration-group"> <label for="mes-nacimiento">Fecha de caducidad</label>
+      <div class="date-selects-container"> <select id="mes-nacimiento">
           <option value="1">01</option>
           <option value="2">02</option>
           <option value="3">03</option>
@@ -35,7 +35,7 @@
           <option value="11">11</option>
           <option value="12">12</option>
         </select>
-        <select id="exp-year">
+        <select id="año-nacimiento">
           <option value="2025">25</option>
           <option value="2026">26</option>
           <option value="2027">27</option>
@@ -56,8 +56,8 @@
       </div>
     </div>
     <br />
-    <div class="input-group cvv-group"> <label for="cvv">CVV</label>
-      <input type="password" id="cvv" placeholder="CVV" maxlength="3">
+    <div class="input-group cvv-group"> <label for="cvv" class="letra-cvv">CVV</label>
+      <input type="number" id="prefijo" placeholder="CVV" maxlength="3">
     </div>
   </div>
 
@@ -90,6 +90,12 @@
         });
         const numeromin = document.getElementById("numero-min");
         numeromin.addEventListener("keydown", function(event) {
+            if (event.keyCode === 38 || event.keyCode === 40){
+                event.preventDefault();
+            } 
+        });
+        const prefijo = document.getElementById("prefijo");
+        prefijo.addEventListener("keydown", function(event) {
             if (event.keyCode === 38 || event.keyCode === 40){
                 event.preventDefault();
             } 
