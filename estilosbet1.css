@@ -1,13 +1,12 @@
 body {
     font-family: sans-serif;
     padding: 0px;
-    /* RECOMENDACIÓN: Añade un max-width y margin: auto para centrar el contenido y simular una vista móvil */
-    max-width: 400px; /* Ajusta este valor si quieres un ancho diferente */
-    margin: 20px auto; /* 20px de margen arriba/abajo, auto para centrar horizontalmente */
-    background-color: #f0f2f5; /* Un fondo suave como en la imagen */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra para destacar el "contenido" */
-    padding: 20px; /* Relleno dentro del body */
-    border-radius: 8px; /* Bordes redondeados */
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #f0f2f5;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 8px;
 }
 
 .form-group {
@@ -18,7 +17,6 @@ label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    /* RECOMENDACIÓN: Alinea las etiquetas a la izquierda si el contenedor es estrecho */
     text-align: left;
 }
 
@@ -36,77 +34,59 @@ select {
     background-position: right 10px center;
     background-size: 12px;
     cursor: pointer;
-    /* RECOMENDACIÓN: Asegura que el padding no afecte el ancho total deseado */
     box-sizing: border-box;
 }
 
-/* ESTA ES LA SECCIÓN CLAVE A EDITAR PARA LA ALINEACIÓN */
 .expiration-cvv {
-    display: flex; /* <-- MUY IMPORTANTE: Convierte este contenedor en un contenedor flex */
-    gap: 10px; /* Esto ya lo tenías, está bien para el espacio entre elementos */
-    justify-content: center; /* Esto centrará todo el bloque. Si quieres que los campos se estiren, usa space-between */
-    justify-content: space-between; /* Distribuye el espacio para que se separen */
-    align-items: flex-start; /* <-- IMPORTANTE: Alinea los ítems por la parte superior (donde están las etiquetas) */
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea en pantallas pequeñas */
+    flex-wrap: wrap;
 }
 
 .expiration-cvv .input-group {
-     flex: 1; /* Esto hace que cada input-group intente ocupar el mismo espacio */
-    /* PARA FECHAS Y CVV, ES MEJOR CONTROLAR SU ANCHO DIRECTAMENTE */
-    display: flex; /* <-- IMPORTANTE: Cada input-group también debe ser un contenedor flex */
-    flex-direction: column; /* <-- IMPORTANTE: Para apilar la etiqueta y el input/select verticalmente */
-    flex-basis: auto; /* Permite que el ancho del contenido determine el ancho base */
+     flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
     margin-bottom: 10px; 
 }
 
-/* CORRECCIÓN: Tu select para el año no tiene label visible. Aquí lo ocultamos */
-.expiration-cvv .input-group:nth-child(2) label { /* El segundo .input-group es el del año */
+.expiration-cvv .input-group:nth-child(2) label {
     display: none;
 }
 
-/* EDICIÓN: Define anchos específicos para los selects y el input de CVV */
 #mes-nacimiento, #año-nacimiento {
-    width: 79px; /* Ajusta el ancho según sea necesario */
+    width: 79px;
     box-sizing: border-box;
 }
 
 #prefijo {
-    width: 100px; /* Ajusta el ancho según sea necesario */
+    width: 100px;
     box-sizing: border-box;
 }
-
-/* ELIMINAR O CORREGIR: Esta regla tiene un error de sintaxis y probablemente no hace lo que quieres */
-/* .expiration-cvv input-group{
+.expiration-cvv #prefijo {
     width: 100%;
     padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-} */
-/* Debería ser algo como: */
-.expiration-cvv #prefijo { /* Selecciona el input de CVV */
-    width: 30%; /* El 100% de su .input-group padre */
-    padding: 10px;
-    border: 1px solid #ccc; /* Asegura un borde */
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
 }
-
-
-/* --- OTRAS EDICIONES Y RECOMENDACIONES --- */
 
 .deposit-amount {
     margin-bottom: 20px;
-    display: flex; /* Utiliza flexbox para alinear el input y el texto "Min. $1.500,00*" */
-    align-items: flex-end; /* Alinea los elementos a la parte inferior */
-    gap: 10px; /* Espacio entre el input y el texto */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .deposit-amount input {
-    /* width: calc(100% - 70px); /* Esto es frágil. Mejor usa flex-grow */
-    flex-grow: 1; /* Hace que el input tome el espacio disponible */
+    flex-grow: 1;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -115,17 +95,15 @@ select {
 }
 
 .deposit-amount .min-amount {
-    /* float: right; /* float es antiguo, flexbox es mejor */
     font-size: 14px;
     color: #888;
-    /* line-height: 38px; /* Alineación con input: Esto es una solución "mágica", flexbox es más robusto */
-    white-space: nowrap; /* Evita que el texto se rompa */
+    white-space: nowrap;
 }
 
 .deposit-button {
     width: 100%;
-    padding: 12px 20px; /* Un poco más de padding para que se vea mejor */
-    background-color: #28a745; /* Green color */
+    padding: 12px 20px;
+    background-color: #28a745;
     color: white;
     display: flex;
     justify-content: center;
@@ -135,8 +113,8 @@ select {
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
-    box-sizing: border-box; /* Importante para el width: 100% */
-    margin-bottom: 20px; /* Espacio debajo del botón */
+    box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
 .deposit-button:hover {
@@ -146,17 +124,17 @@ select {
 .visa-secure {
     display: flex;
     justify-content: center;
-    align-items: center; /* Alinea verticalmente las imágenes */
-    gap: 15px; /* Más espacio entre imágenes */
+    align-items: center;
+    gap: 15px;
     margin-top: 20px;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Permite que las imágenes se envuelvan */
+    flex-wrap: wrap;
 }
 
 .visa-secure img {
     height: auto;
-    max-width: 60px; /* Asegura que las imágenes no sean demasiado grandes */
-    margin-right: 0px; /* Elimina este margen si usas gap */
+    max-width: 60px;
+    margin-right: 0px;
 }
 
 .material-icons {
@@ -187,9 +165,9 @@ p {
 }
 
 .campo-relleno {
-    width: 100%; /* El 100% de su .input-group padre */
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ccc; /* Asegura un borde */
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
