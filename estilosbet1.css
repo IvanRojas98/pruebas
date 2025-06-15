@@ -66,12 +66,12 @@ select {
 }
 
 /* EDICIÓN: Define anchos específicos para los selects y el input de CVV */
-#exp-month, #exp-year {
-    width: 80px; /* Ajusta el ancho según sea necesario */
+#mes-nacimiento, #año-nacimiento {
+    width: 79px; /* Ajusta el ancho según sea necesario */
     box-sizing: border-box;
 }
 
-#cvv {
+#prefijo {
     width: 100px; /* Ajusta el ancho según sea necesario */
     box-sizing: border-box;
 }
@@ -84,13 +84,18 @@ select {
     font-size: 16px;
 } */
 /* Debería ser algo como: */
-.expiration-cvv input[type="password"] { /* Selecciona el input de CVV */
-    width: 100%; /* El 100% de su .input-group padre */
+.expiration-cvv #prefijo { /* Selecciona el input de CVV */
+    width: 50%; /* El 100% de su .input-group padre */
     padding: 10px;
     border: 1px solid #ccc; /* Asegura un borde */
+    margin-left: 15%;
     border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
+}
+
+.letra-cvv {
+    margin-left: 15%;
 }
 
 
