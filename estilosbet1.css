@@ -85,17 +85,17 @@ select {
 } */
 /* Debería ser algo como: */
 .expiration-cvv #prefijo { /* Selecciona el input de CVV */
-    width: 50%; /* El 100% de su .input-group padre */
+    width: 30%; /* El 100% de su .input-group padre */
     padding: 10px;
     border: 1px solid #ccc; /* Asegura un borde */
-    margin-left: 15%;
+    margin-left: 10%;
     border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
 }
 
 .letra-cvv {
-    margin-left: 15%;
+    margin-left: 10%;
 }
 
 
