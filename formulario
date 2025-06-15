@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Opciones de Despliegue</title>
+<link rel="stylesheet" href="estilosbet1.css" />
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
 
+  <h1>Depositar</h1>
+
+  <div class="form-group">
+    <label for="payment-method">Información de los métodos de pago</label>
+    <select id="payment-method">
+      <option value="1">Tarjeta de débito</option>
+      <option value="2">Tarjeta de crédito</option>
+    </select>
+  </div>
+
+  <div class="expiration-cvv">
+    <div class="input-group expiration-group"> <label for="exp-month">Fecha de caducidad</label>
+      <div class="date-selects-container"> <select id="exp-month">
+          <option value="1">01</option>
+          <option value="2">02</option>
+          <option value="3">03</option>
+          <option value="4">04</option>
+          <option value="5">05</option>
+          <option value="6">06</option>
+          <option value="7">07</option>
+          <option value="8">08</option>
+          <option value="9">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <select id="exp-year">
+          <option value="2025">25</option>
+          <option value="2026">26</option>
+          <option value="2027">27</option>
+          <option value="2028">28</option>
+          <option value="2029">29</option>
+          <option value="2030">30</option>
+          <option value="2031">31</option>
+        </select>
+      </div>
+    </div>
+    <br />
+    <div class="input-group cvv-group"> <label for="cvv">CVV</label>
+      <input type="password" id="cvv" placeholder="CVV" maxlength="3">
+    </div>
+  </div>
+
+  <div class="deposit-amount">
+    <label for="deposit-ars">Monto en ARS (pesos argentinos)</label>
+    <input type="text" id="deposit-ars" placeholder="Min. 1.500">
+    <span class="min-amount">Mín. $1.500,00*</span>
+  </div>
+
+  <button class="deposit-button">
+    <span class="material-icons">shopping_cart</span>
+    PAGAR
+  </button>
+
+  <div class="visa-secure">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1280px-Visa_Inc._logo.svg.png" alt="Visa Secure" width="60">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Visa Secure" width="60">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1026px-American_Express_logo_%282018%29.svg.png" width="60">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/NaranjaX-logo.svg/1280px-NaranjaX-logo.svg.png" width="60">
+  </div>
+
+  <p>*Se requiere un bono mínimo de $1.500 para confirmar su reserva. Dicho importe será descontado del importe total.</p>
+
+</body>
+</html>
