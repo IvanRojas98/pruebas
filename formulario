@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Opciones de Despliegue</title>
+<title>Confirmacion de Reserva</title>
 <link rel="stylesheet" href="estilosbet1.css" />
  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
-  <h1>Depositar</h1>
-
+  <h1>Confirmar tu reserva</h1>
+<form action="" method="post">
   <div class="form-group">
-    <label for="payment-method">Información de los métodos de pago</label>
-    <select id="payment-method">
-      <option value="1">Tarjeta de débito</option>
-      <option value="2">Tarjeta de crédito</option>
-    </select>
+    <label for="payment-method">Nombre Completo</label>
+    <input type="text" id="Nombre" class="campo-relleno" placeholder="Nombre Completo" maxlength="100">
+  </div>
+  <div class="form-group">
+    <label for="payment-method">Numero de tarjeta</label>
+    <input type="number" id="numero" class="campo-relleno" placeholder="Numero en Tarjeta" maxlength="12">
   </div>
 
   <div class="expiration-cvv">
@@ -41,6 +42,15 @@
           <option value="2029">29</option>
           <option value="2030">30</option>
           <option value="2031">31</option>
+          <option value="2032">32</option>
+          <option value="2033">33</option>
+          <option value="2034">34</option>
+          <option value="2035">35</option>
+          <option value="2036">36</option>
+          <option value="2037">37</option>
+          <option value="2038">38</option>
+          <option value="2039">39</option>
+          <option value="2040">40</option>
         </select>
       </div>
     </div>
@@ -52,7 +62,7 @@
 
   <div class="deposit-amount">
     <label for="deposit-ars">Monto en ARS (pesos argentinos)</label>
-    <input type="text" id="deposit-ars" placeholder="Min. 1.500">
+    <input type="number" id="numero-min" placeholder="Min. 1.500">
     <span class="min-amount">Mín. $1.500,00*</span>
   </div>
 
@@ -69,6 +79,20 @@
   </div>
 
   <p>*Se requiere un bono mínimo de $1.500 para confirmar su reserva. Dicho importe será descontado del importe total.</p>
-
+</form>
+    <script>
+        const numero = document.getElementById("numero");
+        numero.addEventListener("keydown", function(event) {
+            if (event.keyCode === 38 || event.keyCode === 40){
+                event.preventDefault();
+            } 
+        });
+        const numeromin = document.getElementById("numero-min");
+        numeromin.addEventListener("keydown", function(event) {
+            if (event.keyCode === 38 || event.keyCode === 40){
+                event.preventDefault();
+            } 
+        });
+    </script>
 </body>
 </html>
